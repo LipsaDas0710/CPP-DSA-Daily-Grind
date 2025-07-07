@@ -1,3 +1,10 @@
+/*Problem: Cyclically Rotate an Array by One(right rotation)
+Link:https://www.geeksforgeeks.org/problems/cyclically-rotate-an-array-by-one2614/1
+
+Description:
+Given an array arr, rotate the array by one position in clockwise direction.*/
+
+
 #include <iostream>
 #include <vector>
 using namespace std;
