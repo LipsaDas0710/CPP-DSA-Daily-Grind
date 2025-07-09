@@ -33,3 +33,15 @@ int main() {
     cout << "\nNew size: " << newSize << endl;
     return 0;
 }
+
+/*Brute Force Approach:
+- SIn set when we insert elements, it automatically removes duplicates.
+- Use a set to store unique elements and then copy them back to the array.
+Time Complexity: O(n log n) + O(n)
+Space Complexity: O(n) for the set.
+
+Optimal Approach:
+- Use two pointer method(i , j) to check for dupes and add the != elememt at the next place (i+1).
+Time Complexity: O(n)
+Space Complexity: O(1)
+*/
