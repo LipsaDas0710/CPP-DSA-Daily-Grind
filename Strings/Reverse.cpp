@@ -3,6 +3,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*Problem: 2 pointer approche*/
+
 class Solution {
 public:
     void reverseString(vector<char>& s) {

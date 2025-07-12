@@ -1,3 +1,9 @@
+/*Problem: Check if the given arry is sorted or not
+Link: https://www.geeksforgeeks.org/problems/check-if-an-array-is-sorted0701/1
+
+Description:
+Given an array of integers, Check if it is sorted or not.*/
+
 #include <iostream>
 using namespace std;
 

@@ -52,6 +52,8 @@ class Solution {
 };
 
 /*Optimal Solution (Sum method)
+Time complexity: O(n)
+Space complexity: O(1)
 Description: take the sum of natual no till taht number then sub tact the sum of teh array.
 */
 class Solution2 {

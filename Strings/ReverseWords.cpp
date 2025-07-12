@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*reverse the complete sentense then reverse the individual words.*/
 class Solution {
 public:
     string reverseWords(string s) {
