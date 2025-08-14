@@ -20,3 +20,12 @@ string kthPermutation(int n, int k, vector<int> &nums) {
     return result + kthPermutation(n - 1, newK, nums);
 }
 
+int main() {
+    int n = 3, k = 3;
+    vector<int> nums;
+    for (int i = 1; i <= n; i++) nums.push_back(i);
+
+    string ans = kthPermutation(n, k, nums);
+    cout << "The " << k << "th permutation is: " << ans << endl;
+    return 0;
+}
