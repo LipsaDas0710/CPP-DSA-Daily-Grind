@@ -38,3 +38,19 @@ for(int i=1;i<n;i++){
 
 };
 
+int main()
+{
+    int arr[] = {1, 2, 3, 4, 5};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    Node* head=Convert(arr ,n);
+
+    //printing the doubly linked list
+    Node* temp=head;    
+    while(temp!=nullptr){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+    cout << endl;
+    
+    return 0;
+}
