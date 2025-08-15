@@ -1,31 +1,34 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-string kthPermutation(int n, int k, vector<int> &nums) {
-    if (n == 0) return "";
-
-    // Factorial of n-1 to know block size
-    int fact = 1;
-    for (int i = 1; i <= n - 1; i++) fact *= i;
-
-    // Determine index of the number to place
-    int index = (k - 1) / fact;
-    int newK = k - index * fact;
-
-    // Pick the element
-    string result = to_string(nums[index]);
-    nums.erase(nums.begin() + index);
-
-    // Recurse for remaining numbers
-    return result + kthPermutation(n - 1, newK, nums);
+string KthPermutation(int n, int k, vector<int> &nums){ 
+     int fact=1;
+     for(int i=1; i<n; i++){
+        fact=fact*i;
+     }
+    k--;
+    string ans="";
+    while(true){
+       ans= ans+to_string(nums[k/fact]);
+       nums.erase(nums.begin()+k/fact);
+       if(nums.size()==0) {
+            break;
+       }  
+       k=k%fact;
+       fact=fact/nums.size();
+    }
+    return ans;
 }
 
-int main() {
-    int n = 3, k = 3;
-    vector<int> nums;
-    for (int i = 1; i <= n; i++) nums.push_back(i);
+int main(){
+    int n=4; int k=17;
+    vector<int> numbers={1, 2, 3, 4};
 
-    string ans = kthPermutation(n, k, nums);
-    cout << "The " << k << "th permutation is: " << ans << endl;
+    string ans= KthPermutation(n, k, numbers);
+    cout << "The " << k << "th permutation of the numbers is: " << ans << endl;
+
+    
     return 0;
 }
