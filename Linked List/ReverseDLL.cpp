@@ -9,20 +9,49 @@ struct Node {
     Node(int val) : data(val), prev(nullptr), next(nullptr) {}
 };
 
-Node* reverseDLL(Node * head){
-    if (head== NULL || head->next== NULL){
-        return  NULL;
+// Node* reverseDLL(Node * head){
+//     if (head== NULL || head->next== NULL){
+//         return  NULL;
+//     }
+//     Node* current= head;
+//     Node* prev=NULL;
+//     while(current){
+//         prev = current->prev;
+//         current->prev= current->next;
+//         current->next=prev;
+//         current=current->prev;
+//     }
+//     if (current) head = current->prev;
+
+//     return head;
+// }
+
+Node* reverseDLL(Node* head) {
+    if (!head || !head->next) return head; // empty or 1 node -> no change
+
+    Node* curr = head;
+    Node* temp = nullptr;
+
+    // process ALL nodes (not just until last->next != NULL)
+    while (curr) {
+        // swap next and prev
+        temp = curr->prev;
+        curr->prev = curr->next;
+        curr->next = temp;
+
+        // move forward (after swap, prev is actually the next node)
+        curr = curr->prev;
     }
-    Node* current= head;
-    Node* prev=NULL;
-    while(current->next!= NULL){
-        prev = current->prev;
-        current->prev= current->next;
-        current->next=prev;
-        current=current->prev;
+
+    // after loop, temp points to the old head
+    // new head is temp->prev
+    if (temp) {
+        head = temp->prev;
     }
-    return prev->prev;
+
+    return head;
 }
+
 
 
     // Utility: print DLL forward
