@@ -19,7 +19,6 @@ void oddEvenList(Node* head){
 
         odd=odd->next;
         even=even->next;
-
     }
     odd->next=evenHead;
   
