@@ -6,9 +6,12 @@ class Solution {
     bool isPrime(int n) {
         // code here
         int count=0;
+        // because of how divisors come in pairs.(i, n/i)
+        //Every divisor pair (i, n/i) gets discovered once.
         for(int i=1;i*i<=n;i++){
             if(n%i==0){
                 count++;
+                // eg: 12%2=0 , 12/2=6 6 can also divide 12 so the pair is (2,6) ~ (i,n/i)
                 if(i!= n/i){
                     count++;
                 }
