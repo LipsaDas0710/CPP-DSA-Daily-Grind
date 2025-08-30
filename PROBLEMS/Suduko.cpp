@@ -76,5 +76,29 @@ public:
             if((boxRow != row || boxCol != col) && board[3*(row/3)+i/3][3*(col/3)+i%3]==c) return false;
         }
         return true;
-    }
+    } 
 };
+
+
+// int boxRow = 3 * (row / 3) + i / 3;
+// int boxCol = 3 * (col / 3) + i % 3;
+
+
+// to find the starting point of the box of 3x3 part we are ding row/3 and col/3
+// then multiply by 3 to get the starting point of that box
+
+// then we add i/3 and i%3 to traverse through the box
+// we are doing i/3 for row as we are checking all the column first then moving to next row
+
+// and i%3 for column as we are checking all the rows first then moving to next column
+
+// i	i/3	i%3	boxRow	boxCol	Position	Label
+// 0	0	0	3+0=3	3+0=3	(3,3)	a
+// 1	0	1	3+0=3	3+1=4	(3,4)	b
+// 2	0	2	3+0=3	3+2=5	(3,5)	c
+// 3	1	0	3+1=4	3+0=3	(4,3)	d
+// 4	1	1	3+1=4	3+1=4	(4,4)	e
+// 5	1	2	3+1=4	3+2=5	(4,5)	f
+// 6	2	0	3+2=5	3+0=3	(5,3)	g
+// 7	2	1	3+2=5	3+1=4	(5,4)	h
+// 8	2	2	3+2=5	3+2=5	(5,5)	i
