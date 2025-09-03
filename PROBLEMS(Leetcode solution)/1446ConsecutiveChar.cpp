@@ -42,4 +42,5 @@ public:
 }; 
 
 
-/*whatever the string is it will always have 1 consecutive char. So use ans to comapir and return that 1 as answer!!*/
+/*whatever the string is it will always have 1 consecutive char. 
+So use ans to comapir and return that 1 as answer!!*/
