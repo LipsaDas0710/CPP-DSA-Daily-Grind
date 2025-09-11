@@ -16,3 +16,4 @@ public:
 
     }
 };
+//take the bool vector till n the make false and true to the factor of the natural number from 2 to n checking for i*i (base case thingy!! 36=6*6)
