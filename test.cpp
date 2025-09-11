@@ -1,27 +1,13 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-
-bool PrimeNum(int num){
-int cnt=0;
- for(int i=1; i*i<=num ; i++){
-  if(num%i==0) cnt++;
-  if (i!=num/i) cnt++;
- }
-if(cnt==2)return true;
+#include<vector>
+int reverse(int n , int rev){
+    if(n<=0) return rev;
+    reverse(n/10, (rev*10)+(n%10));
 }
 
-
-
 int main(){
- int num=9;
- int num1=11;
- if (PrimeNum(num)) {
-  cout<< "Prime!!";
- }
- else {
-  cout<<"Not Prime!!";
- };
- 
-
- return 0;
+    int n =123354;
+    cout<<reverse(n,0);
+    return 0;
 }
