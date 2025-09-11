@@ -9,6 +9,9 @@ class Solution {
         // because of how divisors come in pairs.(i, n/i)
         //Every divisor pair (i, n/i) gets discovered once.
         for(int i=1;i*i<=n;i++){
+          //we are taking the square bcoz one of the factor of the numwill always be less than the sq root of the number!!! 
+          //the base case will be that the are same like a sq root no. like 36= 6*6 npw other than this one actor will alway 
+          //be smaller than other!! 
             if(n%i==0){
                 count++;
                 // eg: 12%2=0 , 12/2=6 6 can also divide 12 so the pair is (2,6) ~ (i,n/i)
