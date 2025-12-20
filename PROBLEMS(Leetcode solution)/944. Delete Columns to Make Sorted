@@ -1,0 +1,53 @@
+You are given an array of n strings strs, all of the same length.
+
+The strings can be arranged such that there is one on each line, making a grid.
+
+For example, strs = ["abc", "bce", "cae"] can be arranged as follows:
+abc
+bce
+cae
+You want to delete the columns that are not sorted lexicographically. In the above example (0-indexed), columns 0 ('a', 'b', 'c') and 2 ('c', 'e', 'e') are sorted, while column 1 ('b', 'c', 'a') is not, so you would delete column 1.
+
+Return the number of columns that you will delete.
+
+
+
+# Intuition
+<!-- Describe your first thoughts on how to solve this problem. -->
+Look at the array as a matrix and compare the columns.
+
+# Approach
+<!-- Describe your approach to solving the problem. -->
+Treat the array as a matrix, compare each column element-wise, and increment a counter for every column that is not lexicographically sorted.
+
+# Complexity
+- Time complexity:
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+O(n*m)
+- Space complexity:
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+O(1)
+
+
+
+
+
+
+class Solution {
+public:
+    int minDeletionSize(vector<string>& strs) {
+        int i,j,count=0;
+        int n=strs.size();
+        int m=strs[0].size();
+        for(j=0; j<m; j++){
+            for(i=1; i<n;i++){
+                if(strs[i-1][j]>strs[i][j]){
+                    count++;
+                    break;
+                }
+            }
+        }
+        return count;
+        
+    }
+};
